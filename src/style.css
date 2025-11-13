@@ -1,0 +1,134 @@
+:root {
+    /* Colors */
+
+    --primary-100: hsl(31, 77%, 52%);
+    --primary-200: hsl(184, 100%, 22%);
+    --primary-300: hsl(179, 100%, 13%);
+
+    --neutral-white: hsla(0, 0%, 100%, 0.75);
+    --neutral-gray-100: hsl(0, 0%, 95%);
+
+    /* TYPOGRAPHY */
+    --fs-heading: 2.5rem;
+    --fs-body: 0.9375rem;
+
+    --ff-primary: "Lexend Deca";
+    --ff-secondary: "Big Shoulders";
+
+    --fw-reg: 400;
+    --fw-bold: 700;
+}
+
+/* Reset */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    margin: 1rem;
+    border-radius: 0.625rem;
+    overflow: hidden;
+}
+
+@media (min-width: 50rem) {
+    .cards {
+        display: grid;
+        max-width: 57.5rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    padding: 3rem;
+    background: var(--card-bg);
+}
+
+.card__icon {
+    margin-block-end: 2rem;
+}
+
+.card__heading {
+    margin-block-end: 1.635rem;
+
+    color: var(--neutral-white);
+
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-heading);
+    font-weight: var(--fw-bold);
+}
+
+.card__paragraph {
+    color: var(--neutral-white);
+
+    max-width: 35ch;
+    margin-block-end: 5rem;
+
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-reg);
+    line-height: 2;
+}
+
+@media (max-width: 50rem) {
+    .card__paragraph {
+        margin-block-end: 1rem;
+    }
+}
+
+.btn {
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--neutral-gray-100);
+    border-radius: 100vw;
+
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color, var(--neutral-gray-100));
+
+    cursor: pointer;
+}
+
+.btn:hover {
+    --button-text-color: var(--neutral-gray-100);
+}
+
+.btn--accent-1:hover {
+    --button-bg-color: var(--primary-100);
+}
+
+.btn--accent-2:hover {
+    --button-bg-color: var(--primary-200);
+}
+
+.btn--accent-3:hover {
+    --button-bg-color: var(--primary-300);
+}
+
+.cards> :nth-child(1) {
+    --card-bg: var(--primary-100);
+}
+
+.cards> :nth-child(2) {
+    --card-bg: var(--primary-200);
+}
+
+.cards> :nth-child(3) {
+    --card-bg: var(--primary-300);
+}
